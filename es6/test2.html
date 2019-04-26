@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6语法</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //3.箭头函数
+
+    //es3/5
+    //function a() {
+
+    //}
+
+    //es6
+    //() => {
+
+    //}  ()里是参数， 如果是一个参数()是可以省略的
+
+    //es3,es5
+    //{
+    //    var evens = [1, 2, 3, 4, 5];
+    //    var odds = evens.map(function (v) {
+    //        return v + 1;
+    //    })
+    //    console.log(evens, odds);
+    //}
+
+    //es6
+    //{
+    //    let evens = [1, 2, 3, 4, 5];
+    //    let odds = evens.map(v => v + 1);
+    //    console.log(evens, odds);
+    //}
+
+    { //es3,es5
+        var factory = function () {
+            this.a = "a";
+            this.b = "b";
+            this.c = {
+                a: 'a+',
+                b: function () {
+                    return this.a;
+                }  //this 指向 哪个被调用的function 这里是c被调用
+            }
+        }
+        console.log(new factory().c.b());  //new factory() 新的实例
+    }
+
+    {
+        //es6
+        let factory = function () {
+            this.a = 'a';
+            this.b = 'b';
+            this.c = {
+                a: 'a+',
+                b: () => {   //()=>箭头函数的指向是 定义时this的指向
+                    return this.a;
+                }
+            }
+        }   
+        console.log(new factory().c.b());
+    }
+</script>
