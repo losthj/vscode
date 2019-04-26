@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6语法</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //    es3  es5  es6
+    //    常量  作用域  箭头函数  默认参数  对象代理
+    
+        //1.常量
+    
+        //Es 5 中常量的写法  常量赋值是没有效果的   常量只能是只读的
+        //Object.defineProperty(window, "PI2", {
+        //    value: 3.1415926,
+        //    writable:false,
+        //})
+        //console.log(window.PI2);
+    
+        //es6
+        //const PI = 3.1415926;
+        //console.log(PI);
+        //PI=4  报错
+        
+    
+    
+        //2.作用域
+        //es5
+        //const callbacks = [];
+        //for (var i = 0; i <= 2; i++) {
+        //    callbacks[i] = function () {
+        //        return i * 2;  //闭包的问题
+        //    }
+        //}
+        //console.table([
+        //    callbacks[0](),
+        //    callbacks[1](),
+        //    callbacks[2](),
+        //]);
+    
+        //es6
+        //const callbacks2 = [];
+        //for (let j = 0; j <= 2;j++){
+        //    callbacks2[j] = function () {
+        //        return j * 2;  
+        //    }
+        //}
+        //console.table([
+        //    callbacks2[0](),
+        //    callbacks2[1](),
+        //    callbacks2[2](),
+        //]);  //let 块作用域
+    
+        //块作用域
+        //es5
+        //(function () {
+        //    const foo = function () {
+        //        return 1;
+        //    }
+        //    console.log("foo()===1", foo() === 1);
+    
+        //    (function () {
+        //        const foo = function () {
+        //            return 2;
+        //        }
+        //        console.log("foo()===2", foo() === 2);
+        //    })();
+        //})();  //立即执行函数的作用域
+        //es6
+        {
+            function foo() {
+                return 1;
+            }
+            console.log("foo()===1", foo() === 1);
+            {
+                function foo() {
+                    return 2;
+                }
+                console.log("foo()===2", foo() === 2);
+            }
+            console.log("foo()===1", foo() === 1);
+        }
+    
+
+    </script>
